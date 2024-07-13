@@ -1,0 +1,164 @@
+@import url('./tailwind.css');
+@import url('./animation.css');
+@import url('./font.css');
+@import url('./normalize.css');
+@import url('./carousel.css');
+@import url('./plane.css');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 2;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 0 24px;
+}
+
+.text-space-more {
+  letter-spacing: 3px;
+}
+
+.text-glow {
+  text-shadow: 0 0 1px #fff;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, rgba(153, 16, 81, 1) 0%, rgba(84, 38, 138, 1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 20px;
+}
+
+.fp-watermark {
+  display: none !important;
+}
+
+.img-profile-wrapper::before {
+  content: '';
+  width: 180px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(153, 16, 81, 1) 0%, rgba(84, 38, 138, 1) 100%);
+  z-index: 1;
+  animation: expand 14s ease-in-out infinite 2s;
+}
+
+.img-profile-wrapper::after {
+  content: '';
+  width: 180px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(153, 16, 81, 1) 0%, rgba(84, 38, 138, 1) 100%);
+  z-index: 1;
+  animation: expand 14s ease-in-out infinite;
+}
+
+.img-profile-wrapper .profile-img-caption {
+  z-index: 3;
+  position: absolute;
+  right: -80px;
+  top: 50px;
+  max-width: 150px;
+}
+
+.img-profile-wrapper .profile-img-caption::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 5px;
+  bottom: -15px;
+  left: 0;
+  background: white;
+}
+
+@keyframes expand {
+  0% {
+    width: 180px;
+    height: 200px;
+  }
+  50% {
+    width: 280px;
+    height: 120px;
+  }
+  100% {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .img-wrapper::after {
+    content: '';
+    width: 120px;
+    height: 150px;
+  }
+  .img-wrapper::before {
+    content: '';
+    width: 120px;
+    height: 150px;
+  }
+
+  @keyframes expand {
+    0% {
+      width: 120px;
+      height: 150px;
+    }
+    50% {
+      width: 80px;
+      height: 100px;
+    }
+    100% {
+      width: 120px;
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .img-wrapper .profile-img-caption {
+    right: -50px;
+    top: 25px;
+    max-width: 100px;
+  }
+}
+
+.text-fill-color-trans {
+  -webkit-text-fill-color: transparent;
+}

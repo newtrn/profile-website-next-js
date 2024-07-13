@@ -1,0 +1,99 @@
+.liquid-morp {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.liquid-morp .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  transform: rotate(325deg);
+  transition: 0.5s;
+}
+
+.liquid-morp .liquid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%) rotate(325deg);
+  background: linear-gradient(90deg, rgba(75, 43, 141, 1) 0%, rgba(146, 36, 137, 1) 25%, rgba(203, 31, 133, 1) 100%);
+  border-radius: 45%;
+  width: 240%;
+  height: 240%;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .liquid-morp {
+    width: 350px;
+    height: 350px;
+  }
+
+  .liquid-morp .liquid {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .liquid-morp {
+    width: 300px;
+    height: 300px;
+  }
+
+  .liquid-morp .liquid {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.scroll-down-icon {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.scroll-down-icon span {
+  display: block;
+  font-size: 32px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrolldown 1.2s ease-in-out infinite 0.15s;
+}
+
+.scroll-down-icon span:last-child {
+  bottom: 25px;
+  animation: scrolldown 1.2s ease-in-out infinite;
+}
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(20%) translateX(-50%);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(0%) translateX(-50%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(20%) translateX(-50%);
+    opacity: 0.7;
+  }
+}

@@ -6,19 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tailwindcss": "npx tailwindcss -i ./styles/global.css -o ./public/tailwindcss/output.css --watch"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-locomotive-scroll": "^0.2.2",
+    "react-masonry-css": "^1.0.16",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.13",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
