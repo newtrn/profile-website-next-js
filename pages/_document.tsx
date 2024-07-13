@@ -5,7 +5,7 @@ const Document = () => {
     <Html>
       <Head>
         <title>suppawits.</title>
-        <meta name="description" content="A simple Next.js starter template" />
+        <meta name="description" content="suppawit is a frontend dev." />
       </Head>
       <body>
         <Main />
